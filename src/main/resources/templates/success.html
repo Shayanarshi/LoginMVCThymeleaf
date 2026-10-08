@@ -1,0 +1,203 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Success</title>
+</head>
+<body>
+<p th:text = "${message}"></p>
+<a th:href = "@{/login}">Login</a>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Successful | Login Demo</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            width: 400px;
+            padding: 45px 40px;
+
+            background: white;
+            border-radius: 16px;
+
+            text-align: center;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-icon {
+            width: 75px;
+            height: 75px;
+
+            margin: 0 auto 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #e8f8ee;
+
+            color: #20a05a;
+
+            font-size: 38px;
+
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #222;
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+        .message {
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+        .success-message {
+            color: #20a05a;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .buttons {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .btn {
+            display: block;
+
+            padding: 13px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+
+            color: white;
+        }
+
+        .login-btn:hover {
+            opacity: 0.9;
+
+            transform: translateY(-1px);
+        }
+
+        .home-btn {
+            background: #f1f3ff;
+
+            color: #667eea;
+        }
+
+        .home-btn:hover {
+            background: #e2e5ff;
+        }
+
+        .footer {
+            margin-top: 25px;
+
+            font-size: 12px;
+
+            color: #aaa;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+    <h2>
+        Registration Successful
+    </h2>
+
+    <p class="success-message"
+       th:if="${message}"
+       th:text="${message}">
+        User registration Successful
+    </p>
+
+    <p class="message">
+        Your account has been created successfully.
+        You can now login using your email and password.
+    </p>
+
+    <div class="buttons">
+
+        <a class="btn login-btn"
+           th:href="@{/login}">
+            Go to Login
+        </a>
+
+        <a class="btn home-btn"
+           th:href="@{/}">
+            Back to Home
+        </a>
+
+    </div>
+
+    <div class="footer">
+        LoginMVC · Spring Boot · Thymeleaf
+    </div>
+
+</div>
+
+</body>
+
+</html>
